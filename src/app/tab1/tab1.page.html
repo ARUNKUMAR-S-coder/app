@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <div class="header-content">
+    <div class="logo">STREAMX</div>
+    <div class="search-box">
+      <input type="text" (input)="searchMovie($event)" placeholder="Search for movies...">
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="loader" *ngIf="isLoading"></div>
+
+  <div id="movies" class="movie-grid">
+    <div class="movie" *ngFor="let movie of movies">
+      <div class="badge">⭐ {{ movie.vote_average.toFixed(1) }}</div>
+      <img [src]="IMG_PATH + movie.poster_path" *ngIf="movie.poster_path">
+      <div class="info">
+        <h3>{{ movie.title }}</h3>
+      </div>
+    </div>
+  </div>
+</ion-content>

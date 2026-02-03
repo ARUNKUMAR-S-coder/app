@@ -1,0 +1,7 @@
+{
+  "name": "STREAMX",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
